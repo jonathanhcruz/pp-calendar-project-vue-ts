@@ -1,16 +1,18 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <div class="container">
+      <Calendar />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { HelloWorld } from "@/components";
+import { Calendar } from "@/components";
 
 @Component({
   components: {
-    HelloWorld,
+    Calendar,
   },
 })
 export default class HomeView extends Vue {}

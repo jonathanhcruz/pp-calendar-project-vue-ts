@@ -1,3 +1,4 @@
-import Calendar from "./Calendar.vue";
+import CalendarWeek from "./Calendars/CalendarWeek.vue";
+import customeAlert from "./Alert/CustomeAlert.vue";
 
-export { Calendar };
+export { CalendarWeek, customeAlert };

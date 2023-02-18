@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import modules from "./modules";
+import alertStore from "./alert";
+import eventsStore from "./events";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    ...modules,
+    alertStore,
+    eventsStore,
   },
 });

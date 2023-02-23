@@ -1,13 +1,18 @@
 import { CalendarEventModel, propActionStateModel } from "@/models";
+import { selectLocal } from "@/data";
 
 export default {
   namespaced: true,
   state: {
+    local: selectLocal(),
     events: [
       {
-        name: "Weekly Meeting",
-        start: "2023-02-11 01:00",
-        end: "2023-02-12 05:00",
+        id: 1,
+        title: "Event 2",
+        start: "2023-02-22 08:00",
+        end: "2023-02-23 10:00",
+        class: "work",
+        backgound: true,
       },
     ],
   },
@@ -18,6 +23,8 @@ export default {
     }: {
       events: CalendarEventModel[];
     }): CalendarEventModel[] => events,
+
+    localeState: ({ local }: { local: string }): string => local,
   },
 
   mutations: {

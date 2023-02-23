@@ -1,4 +1,3 @@
-import HomeView from "./HomeView.vue";
-import AboutView from "./AboutView.vue";
+import CalendarView from "./CalendarView.vue";
 
-export { HomeView, AboutView };
+export { CalendarView };

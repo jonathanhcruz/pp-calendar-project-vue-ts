@@ -1,30 +1,37 @@
 <template>
   <v-app>
     <v-main>
-      <customeAlert />
-      <router-view />
+      <TemplatePage>
+        <template #menu>
+          <Menu />
+        </template>
+        <template #content>
+          <router-view />
+        </template>
+      </TemplatePage>
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { customeAlert } from "@/components";
+import { TemplatePage, Menu } from "@/components";
 
 @Component({
   components: {
-    customeAlert,
+    TemplatePage,
+    Menu,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get isRoute() {
+    return this.$route.path === "/calendar" ? "active" : "";
+  }
+}
 </script>
 
 <style lang="scss">
 .app {
   background: #f5f5f5;
-  .container {
-    width: 100%;
-    max-width: 1200px;
-  }
 }
 </style>

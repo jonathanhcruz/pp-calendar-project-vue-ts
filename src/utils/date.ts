@@ -12,7 +12,8 @@ const formatSave = (date: Date) => {
   return format(date, "yyyy-MM-dd hh:mm");
 };
 
-export default {
-  formatDate,
-  formatSave,
+const timeZone = (): string => {
+  return Intl?.DateTimeFormat()?.resolvedOptions().timeZone?.split("/")[0];
 };
+
+export { formatDate, formatSave, timeZone };
